@@ -29,7 +29,8 @@
        "icon": "build/icon.png",
         "certificateFile" : "build/cert.pfx",
         "certificatePassword" : "fredy123",
-        "publisherName" : "fredysk"
+        "publisherName" : "fredysk",
+        "publish": ["github"]
     },
     "directories": {
         "app": ".",
