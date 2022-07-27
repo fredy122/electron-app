@@ -1,6 +1,6 @@
 const { app, BrowserWindow, autoUpdater } = require('electron')
 
-const server = 'https://electron-fqhm6tua8-fredy122.vercel.app'
+const server = 'https://electron-app-eta.vercel.app'
 const url = `${server}/update/${process.platform}/${app.getVersion()}`
 
 autoUpdater.setFeedURL({ url })
