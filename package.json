@@ -1,12 +1,13 @@
 {
   "name": "electron-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "app de prueba",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "publish": "electron-builder -w --publish always"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,12 @@
         "certificatePassword" : "fredy123",
         "publisherName" : "fredysk",
         "publish": ["github"]
+    },
+    "publish": {
+        "provider": "github",
+        "owner": "fredy122",
+        "repo": "electron-app",
+        "releaseType": "release"
     },
     "directories": {
         "app": ".",
