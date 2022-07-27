@@ -1,4 +1,13 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, autoUpdater } = require('electron')
+
+const server = 'https://update.electronjs.org'
+const feed = `${server}/fredy122/electron-app/${process.platform}-${process.arch}/${app.getVersion()}`
+
+autoUpdater.setFeedURL(feed)
+
+setInterval(() => {
+    autoUpdater.checkForUpdates()
+  }, 1 * 60 * 1000)
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -11,12 +20,6 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow()
-
-  require('update-electron-app')({
-    repo: 'fredy122/electron-app',
-    updateInterval: '5 minutes',
-    logger: require('electron-log')
-  })
 })
 
 app.on('window-all-closed', () => {
