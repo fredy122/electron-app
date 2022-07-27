@@ -24,25 +24,30 @@
     "electron-builder": "^23.1.0"
   },
   "build": {
-   "appId": "com.jamzi.quickstart",
+    "appId": "com.jamzi.quickstart",
     "win": {
-       "target": "nsis",
-       "icon": "build/icon.png",
-        "certificateFile" : "build/cert.pfx",
-        "certificatePassword" : "fredy123",
-        "publisherName" : "fredysk",
-        "publish": ["github"]
+      "target": "nsis",
+      "icon": "build/icon.png",
+      "certificateFile": "build/cert.pfx",
+      "certificatePassword": "fredy123",
+      "publisherName": "fredysk",
+      "publish": [
+        "github"
+      ]
     },
     "publish": {
-        "provider": "github",
-        "owner": "fredy122",
-        "repo": "electron-app",
-        "releaseType": "release"
+      "provider": "github",
+      "owner": "fredy122",
+      "repo": "electron-app",
+      "releaseType": "release"
     },
     "directories": {
-        "app": ".",
-        "output": "out",
-        "buildResources": "build-res"
+      "app": ".",
+      "output": "out",
+      "buildResources": "build-res"
     }
+  },
+  "dependencies": {
+    "update-electron-app": "^2.0.1"
   }
 }
