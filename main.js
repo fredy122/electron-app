@@ -12,13 +12,11 @@ const createWindow = () => {
 app.whenReady().then(() => {
   createWindow()
 
-  updateApp = require('update-electron-app');
-
-  updateApp({
-        // repo: 'PhiloNL/electron-hello-world', // defaults to package.json
-        updateInterval: '5 minutes',
-        notifyUser: true
-  });
+  require('update-electron-app')({
+    repo: 'fredy122/electron-app',
+    updateInterval: '5 minutes',
+    logger: require('electron-log')
+  })
 })
 
 app.on('window-all-closed', () => {
